@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Netflix Clone</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              button: "rgb(229, 9, 20)",
+              borders: "rgb(45,45,45)",
+            },
+          },
+        },
+      };
+    </script>
+    <!-- Linking the JavaScript file -->
+    <script src="./assets/scripts/script.js" defer></script>
+  </head>
+
+  <body class="bg-black text-white">
+    <!-- Navbar and Hero -->
+    <header
+      class="bg-black/50 bg-blend-color bg-cover bg-[url('./assets/images/movie-bg.jpg')] h-[100vh]"
+    >
+      <!-- Navbar -->
+      <nav
+        class="flex flex-wrap mx-10 justify-around gap-y-4 sm:justify-between py-6 px-1 sm:px-8"
+      >
+        <div>
+          <img
+            src="./assets/images/logo.svg"
+            class="w-4/5 lg:w-11/12"
+            alt="Netflix's Logo"
+            loading="lazy"
+          />
+        </div>
+        <!-- Buttons -->
+        <div class="flex gap-x-4">
+          <select
+            name="language"
+            class="bg-black/50 text-gray-400 border border-[#fff] rounded-[4px] py-2 px-4"
+          >
+            <option value="english">English</option>
+            <option value="spanish">Spanish</option>
+          </select>
+          <button
+            class="bg-button font-semibold w-[80px] justify-center items-center flex rounded-sm"
+          >
+            Sign In
+          </button>
+        </div>
+      </nav>
+
+      <!-- Hero Section -->
+      <section
+        class="text-center mx-10 mb-4 py-8 sm:py-24 px-7 sm:px-10 lg:px-40"
+      >
+        <h1 class="font-bold text-3xl sm:text-5xl py-2">
+          Unlimited movies, TV shows, and more.
+        </h1>
+        <h2 class="text-xl sm:text-2xl py-1 font-semibold">
+          Watch anywhere. Cancel anytime.
+        </h2>
+        <form action="#" class="flex flex-col items-center py-9">
+          <h3 class="text-xl sm:text-[1.2rem] font-semibold">
+            Ready to watch? Enter your email to create or restart your
+            membership.
+          </h3>
+          <div
+            class="flex flex-col lg:flex-row items-center lg:items-stretch gap-y-2 justify-center gap-4 my-4 w-4/5 sm:w-3/4 lg:w-2/3"
+          >
+            <input
+              type="email"
+              name="email"
+              class="px-4 py-2 rounded-md bg-black/50 border w-full lg::w-4/5 text-white"
+              placeholder="Email address"
+            />
+            <button
+              type="submit"
+              class="bg-button rounded-md lg:text-2xl lg:w-[275px] py-4 px-5 hover:brightness-110 flex justify-evenly items-center gap-x-2"
+            >
+              Get Started
+              <img src="./assets/images/svgexport-2.svg" loading="lazy" />
+            </button>
+          </div>
+        </form>
+      </section>
+    </header>
+
+    <!-- Section : Enjoy on your TV -->
+    <section
+      class="flex flex-col mb-10 lg:flex-row px-8 py-8 justify-center items-center text-center lg:text-left lg:justify-between border-b-8 border-borders"
+    >
+      <div class="lg:w-3/4 ml-10">
+        <h2 class="text-2xl py-2 sm:text-4xl lg:text-5xl font-bold">
+          Enjoy on your TV.
+        </h2>
+        <h3 class="text-lg py-2 sm:text-xl w-[90%] lg:text-2xl">
+          Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray
+          players, and more.
+        </h3>
+      </div>
+
+      <div class="relative mr-10">
+        <img
+          src="./assets/images/tv.png"
+          alt="A TV skeleton framework"
+          loading="lazy"
+          class="relative z-[2]"
+        />
+        <video
+          src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-tv-0819.m4v"
+          class="absolute max-w-[73%] max-h-[54%] top-[22%] left-[14%]"
+          muted
+          autoplay
+          loop
+        ></video>
+      </div>
+    </section>
+
+    <!-- Section : Download your shows to watch offline -->
+    <section
+      class="flex flex-col mt-10 lg:flex-row-reverse px-8 py-8 justify-center items-center text-center lg:text-left lg:justify-between border-b-8 border-borders"
+    >
+      <div class="lg:w-3/4 ml-10">
+        <h2 class="text-2xl py-2 sm:text-4xl lg:text-5xl w-[97%] font-bold">
+          Download your shows to watch offline.
+        </h2>
+        <h3 class="text-lg py-2 sm:text-xl lg:text-2xl w-[90%]">
+          Save your favorites easily and always have something to watch.
+        </h3>
+      </div>
+
+      <div class="relative mr-10">
+        <img
+          src="./assets/images/eleven.jpg"
+          alt="Picture of El in a mobile phone with Mike at the background"
+          loading="lazy"
+        />
+        <div
+          class="flex justify-between items-center absolute left-2/4 bottom-[4%] bg-black w-3/5 -translate-x-1/2 border-2 border-white/25 rounded-xl py-1.5 px-3"
+        >
+          <div>
+            <!-- an Image -->
+          </div>
+          <div class="flex flex-col text-left gap-y-0 grow">
+            <p class="text-[.9rem] lg:text-base font-semibold -mb-1">
+              Stranger Things
+            </p>
+            <p class="text-tiny lg:text-[.9rem] text-blue-600">
+              Downloading...
+            </p>
+          </div>
+          <div>
+            <img
+              src="./assets/images/download-icon.gif"
+              alt="Downloading Icon"
+              class="w-12"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section : Watch everywhere -->
+    <section
+      class="flex flex-col mt-10 lg:flex-row px-8 py-8 justify-center items-center text-center lg:text-left lg:justify-between border-b-8 border-borders"
+    >
+      <div class="lg:w-3/4 ml-10">
+        <h2 class="text-2xl py-2 sm:text-4xl lg:text-5xl font-bold">
+          Watch everywhere.
+        </h2>
+        <h3 class="text-lg py-2 sm:text-xl lg:text-2xl">
+          Stream unlimited movies and TV shows on your phone, tablet, laptop,
+          and TV without paying more.
+        </h3>
+      </div>
+
+      <div class="relative mr-10">
+        <img
+          src="./assets/images/device-pile.png"
+          alt="A pile of multiple devices"
+          loading="lazy"
+          class="relative z-[2]"
+        />
+        <video
+          src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-devices.m4v"
+          class="absolute top-[11%] left-[20%] max-w-[63%] max-h-[47%]"
+          autoplay
+          muted
+          loop
+        ></video>
+      </div>
+    </section>
+
+    <!-- Section : Create profiles for kids -->
+    <section
+      class="flex flex-col mt-10 lg:flex-row-reverse px-8 py-8 justify-center items-center text-center lg:text-left lg:justify-between border-b-8 border-borders"
+    >
+      <div class="lg:w-3/4">
+        <h2 class="text-2xl py-2 sm:text-4xl lg:text-5xl font-bold">
+          Create profiles for kids.
+        </h2>
+        <h3 class="text-lg py-2 sm:text-xl lg:text-2xl">
+          Send kids on adventures with their favorite characters in a space made
+          just for them—free with your membership.
+        </h3>
+      </div>
+
+      <div>
+        <img src="./assets/images/kids.png" alt="Kids" loading="lazy" />
+      </div>
+    </section>
+
+    <!--Faqs-->
+
+    <div class="mb-20 mt-20">
+      <h1
+        class="text-center text-6xl max-[960px]:text-4xl text-white font-bold"
+      >
+        Frequently Asked Questions
+      </h1>
+    </div>
+    <div class="text-white mb-10 mt-20 w-[70%] max-[1280px]:w-[90%] mx-auto">
+      <!-- Accordion Item 1 -->
+      <div class="accordion-item mt-2">
+        <div
+          class="pl-10 flex justify-between h-[80px] max-[960px]:h-[70px] bg-[rgb(35,35,35)] items-center hover:bg-[rgb(77,77,77)] ml-5 font-semibold text-xl cursor-pointer"
+          onclick="toggleAccordion(1)"
+        >
+          <span>What is Netflix?</span>
+          <div class="mr-5 text-3xl">+</div>
+        </div>
+        <div
+          id="accordion-content-1"
+          class="max-h-full overflow-hidden transition duration-200 ease-out bg-[rgb(35,35,35)] mt-1 ml-[20px] py-3 px-4 hidden"
+        >
+          <p class="text-white text-2xl">
+            Netflix is a streaming service that offers a wide variety of
+            award-winning TV shows, movies, anime, documentaries and more – on
+            thousands of internet-connected devices. You can watch as much as
+            you want, whenever you want, without a single ad – all for one low
+            monthly price. There's always something new to discover, and new TV
+            shows and movies are added every week!
+          </p>
+        </div>
+      </div>
+
+      <!-- Accordion Item 2 -->
+      <div class="accordion-item mt-2">
+        <div
+          class="pl-10 flex justify-between h-[80px] max-[960px]:h-[70px] bg-[rgb(35,35,35)] items-center hover:bg-[rgb(77,77,77)] ml-5 font-semibold text-xl cursor-pointer"
+          onclick="toggleAccordion(2)"
+        >
+          <span>How much does Netflix cost?</span>
+          <div class="mr-5 text-3xl">+</div>
+        </div>
+        <div
+          id="accordion-content-2"
+          class="max-h-full overflow-hidden transition duration-200 ease-out bg-[rgb(35,35,35)] mt-1 ml-[20px] py-3 px-4 hidden"
+        >
+          <p class="text-white text-2xl">
+            Netflix offers three membership plans to suit your needs. Your plan
+            will determine how many people can stream Netflix content at once
+            and whether you can view in Standard Definition (SD), High
+            Definition (HD), or Ultra High Definition (UHD).
+          </p>
+        </div>
+      </div>
+
+      <!-- Add more accordion items here -->
+    </div>
+
+    <!-- Newsletter -->
+    <form action="#" class="flex flex-col items-center py-9">
+      <h3 class="text-xl text-center font-semibold sm:text-[1.2rem]">
+        Ready to watch? Enter your email to create or restart your membership.
+      </h3>
+      <div
+        class="flex flex-col lg:flex-row items-center gap-x-2 lg:items-stretch gap-y-2 justify-center my-4 w-4/5 lg:w-1/2"
+      >
+        <input
+          type="email"
+          name="email"
+          class="px-4 py-2 rounded-md bg-black/50 border w-full lg::w-4/5 text-black"
+          placeholder="Email address"
+        />
+        <button
+          type="submit"
+          class="bg-button rounded-md lg:text-2xl lg:w-[275px] py-4 px-5 hover:brightness-110 flex justify-evenly items-center gap-x-2"
+        >
+          Get Started
+          <img src="./assets/images/svgexport-2.svg" loading="lazy" />
+        </button>
+      </div>
+    </form>
+
+    <footer
+      class="footer-grey pt-12 px-[5%] text-white/50 lg:px-11 border-t-8 border-borders"
+    >
+      <div class="w-9/12 mx-auto h-10 flex items-center">
+        <p class="text-gray-300">
+          Questions?call
+          <u>
+            <a href="tel:000-800-919-1694">000-800-919-1694</a>
+          </u>
+        </p>
+      </div>
+      <div
+        class="text-gray-300 grid grid-cols-3 mx-auto w-9/12 mt-5 mb-5 max-md:grid-cols-2 gap-y-8 max-[640px]:grid-cols-1"
+      >
+        <div>
+          <ul class="grid gap-y-3 underline">
+            <li>FAQ</li>
+            <li>Media center</li>
+            <li>Ways to Watch</li>
+            <li>Cookie Preferences</li>
+            <li>Speed Test</li>
+          </ul>
+        </div>
+        <div>
+          <ul class="grid gap-y-3 underline">
+            <li>Help Center</li>
+            <li>Investor Relations</li>
+            <li>Terms of Use</li>
+            <li>Corporate Information</li>
+            <li>legal Notices</li>
+          </ul>
+        </div>
+        <div>
+          <ul class="grid gap-y-3 underline">
+            <li>Account</li>
+            <li>Jobs</li>
+            <li>Privacy</li>
+            <li>Conatct Us</li>
+            <li>Only on Netflix</li>
+          </ul>
+        </div>
+      </div>
+      <!-- footer select list -->
+      <div class="flex items-center text-white w-9/12 mx-auto mb-10 h-10 mt-10">
+        <select
+          name="language"
+          class="bg-black/50 text-gray-400 border border-[#fff] rounded-[4px] py-2 px-4"
+        >
+          <option value="english">English</option>
+          <option value="spanish">Spanish</option>
+        </select>
+      </div>
+    </footer>
+  </body>
+</html>
